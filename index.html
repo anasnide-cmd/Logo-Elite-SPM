@@ -13,13 +13,13 @@
             --gold: #D4AF37;
             --gold-light: #F5E7A1;
             --gold-dark: #B8860B;
-            --dark: #0A0A0A; /* Darker background */
-            --darker: #050505; /* Deep dark for accents */
-            --light: #E5E5E5; /* Light text */
-            --gray: #AAAAAA; /* Gray text */
+            --dark: #0A0A0A;
+            --darker: #050505;
+            --light: #E5E5E5;
+            --gray: #AAAAAA;
             --white: #FFFFFF;
             --transition: all 0.3s ease;
-            --card-bg: #1A1A1A; /* Card background */
+            --card-bg: #1A1A1A;
         }
         
         * {
@@ -643,85 +643,101 @@
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
         }
         
-        /* Contact Section */
-        .contact {
+        /* Order Form Section */
+        .order-section {
             background-color: transparent;
+            padding: 6rem 0;
         }
         
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4rem;
-            max-width: 1200px;
+        .order-container {
+            max-width: 800px;
             margin: 0 auto;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-info h3 {
-            font-size: 2.2rem;
-            color: var(--gold-light);
-            margin-bottom: 2rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 4rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             position: relative;
-            padding-bottom: 1rem;
+            overflow: hidden;
         }
         
-        .contact-info h3::after {
+        .order-container::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold), transparent);
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png');
+            opacity: 0.1;
         }
         
-        .contact-info p {
-            margin-bottom: 2.5rem;
-            color: var(--gray);
-            font-size: 1.2rem;
-            line-height: 1.8;
+        .order-form {
+            position: relative;
+            z-index: 2;
         }
         
-        .contact-detail {
-            display: flex;
-            align-items: flex-start;
+        .form-group {
             margin-bottom: 2rem;
-            transition: var(--transition);
-            background: rgba(30, 30, 30, 0.5);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
         }
         
-        .contact-detail:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        
-        .contact-detail i {
-            font-size: 1.8rem;
-            color: var(--gold);
-            margin-right: 20px;
-            min-width: 40px;
-            padding-top: 5px;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-        }
-        
-        .contact-detail div h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--gold-light);
-        }
-        
-        .contact-detail div p {
-            margin-bottom: 0;
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
             font-size: 1.1rem;
-            color: var(--gray);
+            color: var(--gold-light);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            background: rgba(30, 30, 30, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            color: var(--light);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1.3rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--darker);
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
         }
         
         .whatsapp-cta {
@@ -906,6 +922,10 @@
             .whatsapp-cta h3 {
                 font-size: 2.4rem;
             }
+            
+            .order-container {
+                padding: 3rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -935,10 +955,6 @@
                 max-width: 100%;
             }
             
-            .contact-content {
-                flex-direction: column;
-            }
-            
             .whatsapp-cta h3 {
                 font-size: 2.2rem;
             }
@@ -949,6 +965,14 @@
             
             .btn {
                 padding: 1rem 2rem;
+            }
+            
+            .order-container {
+                padding: 2rem;
+            }
+            
+            .order-section {
+                padding: 4rem 0;
             }
         }
         
@@ -1016,6 +1040,23 @@
                 text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
             }
         }
+        
+        /* Form Success Message */
+        .success-message {
+            background: rgba(33, 150, 83, 0.2);
+            border: 1px solid rgba(33, 150, 83, 0.5);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            display: none;
+        }
+        
+        .success-message p {
+            color: #4CAF50;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -1037,7 +1078,7 @@
                     <li><a href="#process">Proses</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#testimonials">Testimoni</a></li>
-                    <li><a href="#contact">Hubungi</a></li>
+                    <li><a href="#order">Pesan</a></li>
                     <button class="close-menu" id="closeMenu">
                         <i class="fas fa-times"></i>
                     </button>
@@ -1055,7 +1096,7 @@
             <h1>Pembuatan Logo Premium untuk Kerja Kursus Perniagaan SPM</h1>
             <div class="gold-divider"></div>
             <p>Logo profesional eksklusif yang meningkatkan kualiti projek Perniagaan SPM anda dengan sentuhan elegan dan premium</p>
-            <a href="https://wa.me/60105112907" class="btn btn-whatsapp">
+            <a href="#order" class="btn btn-whatsapp">
                 <i class="fab fa-whatsapp"></i> Pesan Sekarang
             </a>
         </div>
@@ -1209,42 +1250,52 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section-padding">
+    <!-- Order Form Section -->
+    <section id="order" class="order-section">
         <div class="container">
             <div class="section-title">
-                <h2>Hubungi Kami</h2>
-                <p>Hubungi kami untuk perkhidmatan reka bentuk logo premium</p>
+                <h2>Pesan Logo Premium Anda</h2>
+                <p>Isi borang di bawah untuk memulakan pesanan logo premium anda</p>
             </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Maklumat Perhubungan</h3>
-                    <p>Untuk pesanan atau pertanyaan tentang perkhidmatan pembuatan logo premium, sila hubungi kami melalui WhatsApp.</p>
-                    
-                    <div class="contact-detail">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p>010-5112907</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>premium@logoelitespm.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Waktu Operasi</h4>
-                            <p>Setiap Hari: 9:00 pagi - 10:00 malam</p>
-                        </div>
-                    </div>
+            
+            <div class="order-container">
+                <div class="success-message" id="successMessage">
+                    <p><i class="fas fa-check-circle"></i> Pesanan anda telah berjaya dihantar! Kami akan menghubungi anda segera melalui WhatsApp.</p>
                 </div>
+                
+                <form id="orderForm" class="order-form">
+                    <div class="form-group">
+                        <label for="name">Nama Penuh</label>
+                        <input type="text" id="name" name="name" required placeholder="Nama anda">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Nombor WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Contoh: 0123456789">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Jenis Perkhidmatan</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Pilih perkhidmatan</option>
+                            <option value="Reka Bentuk Premium">Reka Bentuk Premium</option>
+                            <option value="Skema Warna Mewah">Skema Warna Mewah</option>
+                            <option value="Fail Resolusi Tinggi">Fail Resolusi Tinggi</option>
+                            <option value="Perundingan Eksklusif">Perundingan Eksklusif</option>
+                            <option value="Konsep Perniagaan Mewah">Konsep Perniagaan Mewah</option>
+                            <option value="Kualiti Terjamin">Kualiti Terjamin</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="concept">Konsep Logo (Deskripsi)</label>
+                        <textarea id="concept" name="concept" required placeholder="Jelaskan konsep logo yang anda inginkan..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fab fa-whatsapp"></i> Hantar Pesanan ke WhatsApp
+                    </button>
+                </form>
             </div>
             
             <div class="whatsapp-cta">
@@ -1270,7 +1321,7 @@
                 <li><a href="#process">Proses</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#testimonials">Testimoni</a></li>
-                <li><a href="#contact">Hubungi</a></li>
+                <li><a href="#order">Pesan</a></li>
             </ul>
             
             <div class="social-links">
@@ -1353,6 +1404,35 @@
         
         whatsappBtn.addEventListener('mouseleave', function() {
             this.style.animation = 'pulse 2s infinite';
+        });
+        
+        // Order Form WhatsApp Integration
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const concept = document.getElementById('concept').value;
+            
+            // Format WhatsApp message
+            const message = `*PESANAN LOGO BARU*%0A%0A*Nama:* ${name}%0A*No WhatsApp:* ${phone}%0A*Perkhidmatan:* ${service}%0A%0A*Konsep Logo:*%0A${concept}%0A%0A_Saya ingin order logo premium untuk SPM._`;
+            
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/60105112907?text=${encodeURIComponent(message)}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>
