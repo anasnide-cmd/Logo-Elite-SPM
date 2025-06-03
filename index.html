@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogoEliteSPM | Pembuatan Logo Premium untuk Pelajar SPM</title>
+    <meta name="description" content="Perkhidmatan pembuatan logo premium untuk kerja kursus Perniagaan SPM. Dapatkan logo eksklusif yang meningkatkan kualiti projek anda.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F5E7A1;
+            --gold-dark: #B8860B;
+            --dark: #0A0A0A; /* Darker background */
+            --darker: #050505; /* Deep dark for accents */
+            --light: #E5E5E5; /* Light text */
+            --gray: #AAAAAA; /* Gray text */
+            --white: #FFFFFF;
+            --transition: all 0.3s ease;
+            --card-bg: #1A1A1A; /* Card background */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            color: var(--gray);
+            background-color: var(--dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background: url('https://www.transparenttextures.com/patterns/black-linen.png'), 
+                        linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-padding {
+            padding: 6rem 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(10, 10, 10, 0.98);
+            color: var(--white);
+            padding: 1.5rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+        }
+        
+        .header-scrolled {
+            padding: 1rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            transition: var(--transition);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .logo:hover {
+            transform: scale(1.03);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--gold);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(5, 5, 5, 0.95) 0%, rgba(15, 15, 15, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, rgba(10, 10, 10, 0.95) 90%);
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/dark-leather.png');
+            opacity: 0.15;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 1.5rem;
+            animation: fadeInUp 1s ease-out;
+            z-index: 2;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--gold-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(229, 229, 229, 0.95);
+            font-weight: 300;
+        }
+        
+        .gold-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 2rem auto;
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--darker);
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            cursor: pointer;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            padding: 1.3rem 3rem;
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .btn-whatsapp i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .btn-whatsapp:hover {
+            color: var(--white);
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            animation: none;
+        }
+        
+        .btn-whatsapp::before {
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .section-title h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .section-title p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: transparent;
+            position: relative;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+            z-index: 1;
+            border-top: 4px solid var(--gold);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/black-paper.png');
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+        
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold-light);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        
+        /* Process Section */
+        .process {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
+            color: var(--white);
+            position: relative;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+            opacity: 0.2;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            text-align: center;
+            max-width: 250px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            margin: 1rem;
+            transition: var(--transition);
+            background: rgba(30, 30, 30, 0.5);
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--darker);
+            font-size: 1.8rem;
+            font-weight: 700;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            font-family: 'Playfair Display', serif;
+            transition: var(--transition);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .step:hover .step-number {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+        }
+        
+        .step h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: var(--gold-light);
+        }
+        
+        .step p {
+            color: rgba(229, 229, 229, 0.9);
+            font-size: 1.15rem;
+            font-weight: 300;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            background-color: transparent;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .portfolio-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            background: var(--card-bg);
+            position: relative;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/black-paper.png');
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .portfolio-img {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--gold);
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .portfolio-info {
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .portfolio-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold-light);
+        }
+        
+        .portfolio-info p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: transparent;
+            text-align: center;
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            padding: 3.5rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .testimonial-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/black-paper.png');
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .testimonial-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .testimonial {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--gray);
+            position: relative;
+            font-weight: 400;
+            z-index: 2;
+        }
+        
+        .testimonial::before, .testimonial::after {
+            content: '"';
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            font-family: serif;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+        
+        .testimonial::before {
+            top: -30px;
+            left: -20px;
+        }
+        
+        .testimonial::after {
+            content: '"';
+            bottom: -60px;
+            right: -20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-top: 2rem;
+            display: block;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: transparent;
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            font-size: 2.2rem;
+            color: var(--gold-light);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+        
+        .contact-info p {
+            margin-bottom: 2.5rem;
+            color: var(--gray);
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            background: rgba(30, 30, 30, 0.5);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .contact-detail:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .contact-detail i {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-right: 20px;
+            min-width: 40px;
+            padding-top: 5px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+        
+        .contact-detail div h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold-light);
+        }
+        
+        .contact-detail div p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        .whatsapp-cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--darker) 0%, #0d0d0d 100%);
+            border-radius: 8px;
+            color: var(--white);
+            max-width: 1000px;
+            margin: 5rem auto 0;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .whatsapp-cta:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .whatsapp-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png');
+            opacity: 0.1;
+        }
+        
+        .whatsapp-cta h3 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            color: var(--gold-light);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+        
+        .whatsapp-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            font-weight: 300;
+            color: rgba(229, 229, 229, 0.95);
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--darker);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+            color: var(--white);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--darker);
+            color: var(--white);
+            padding: 5rem 0 3rem;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links li {
+            margin: 0 1.5rem 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            color: var(--gold-light);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .social-links a:hover {
+            background: var(--gold);
+            transform: translateY(-5px);
+            color: var(--darker);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .copyright {
+            color: var(--gray);
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+            
+            .whatsapp-cta h3 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step {
+                margin-bottom: 3rem;
+                max-width: 100%;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .whatsapp-cta h3 {
+                font-size: 2.2rem;
+            }
+            
+            .whatsapp-cta p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 1rem 2rem;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--darker);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.3s ease;
+                z-index: 1001;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+                border-left: 1px solid rgba(212, 175, 55, 0.2);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .close-menu {
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+                color: var(--gold);
+                font-size: 2rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+                transition: var(--transition);
+                text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            }
+            
+            .close-menu:hover {
+                transform: rotate(90deg);
+                text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-crown"></i>
+                    <span>LogoEliteSPM</span>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#services">Perkhidmatan</a></li>
+                    <li><a href="#process">Proses</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#contact">Hubungi</a></li>
+                    <button class="close-menu" id="closeMenu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pembuatan Logo Premium untuk Kerja Kursus Perniagaan SPM</h1>
+            <div class="gold-divider"></div>
+            <p>Logo profesional eksklusif yang meningkatkan kualiti projek Perniagaan SPM anda dengan sentuhan elegan dan premium</p>
+            <a href="https://wa.me/60105112907" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perkhidmatan Eksklusif</h2>
+                <p>Kami menawarkan penyelesaian logo premium khusus untuk keperluan kerja kursus pelajar SPM</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Reka Bentuk Premium</h3>
+                    <p>Logo eksklusif dengan konsep kreatif tinggi yang memenuhi standard kerja kursus SPM</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Skema Warna Mewah</h3>
+                    <p>Kombinasi warna premium yang mencerminkan kualiti tinggi dan profesionalisme</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-certificate"></i>
+                    </div>
+                    <h3>Fail Resolusi Tinggi</h3>
+                    <p>Menerima logo dalam format vektor dan resolusi tinggi untuk cetakan berkualiti</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <h3>Perundingan Eksklusif</h3>
+                    <p>Perbincangan terperinci dengan pereka untuk memastikan logo memenuhi keperluan anda</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Konsep Perniagaan Mewah</h3>
+                    <p>Logo yang direka untuk mencerminkan perniagaan berprestij dan eksklusif</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Kualiti Terjamin</h3>
+                    <p>Kepuasan pelanggan diutamakan dengan jaminan kualiti premium</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Proses Eksklusif</h2>
+                <p>Cara mudah mendapatkan logo premium untuk kerja kursus SPM anda</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Perundingan</h3>
+                    <p>Hubungi kami melalui WhatsApp untuk perbincangan awal konsep logo</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Pembayaran</h3>
+                    <p>Selesaikan pembayaran untuk memulakan proses reka bentuk</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Reka Bentuk</h3>
+                    <p>Pereka kami akan membuat draf logo premium berdasarkan keperluan anda</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Penghantaran</h3>
+                    <p>Terima logo premium anda dalam format berkualiti tinggi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Koleksi Eksklusif</h2>
+                <p>Contoh logo premium yang telah kami hasilkan untuk pelajar SPM</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-color: #1a1a1a;">
+                        <i class="fas fa-gem" style="color: #D4AF37;"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Jenama Mewah</h3>
+                        <p>Logo untuk produk mewah dan eksklusif</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-color: #1a1a1a;">
+                        <i class="fas fa-hotel" style="color: #D4AF37;"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Hotel Premium</h3>
+                        <p>Logo untuk perkhidmatan penginapan premium</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-color: #1a1a1a;">
+                        <i class="fas fa-spa" style="color: #D4AF37;"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Spa Eksklusif</h3>
+                        <p>Logo untuk pusat spa dan kecantikan premium</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-color: #1a1a1a;">
+                        <i class="fas fa-utensils" style="color: #D4AF37;"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Restoran Fine Dining</h3>
+                        <p>Logo untuk restoran mewah dan eksklusif</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimoni Eksklusif</h2>
+                <p>Apa kata pelajar yang telah menggunakan perkhidmatan premium kami</p>
+            </div>
+            <div class="testimonial-container">
+                <p class="testimonial">"Logo yang diberikan benar-benar premium dan membantu saya menonjolkan kualiti projek perniagaan saya. Pereka sangat profesional dan memahami keperluan pelajar SPM. Hasilnya jauh melebihi jangkaan!"</p>
+                <span class="testimonial-author">- Amirul, SMK Putrajaya</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Hubungi kami untuk perkhidmatan reka bentuk logo premium</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Maklumat Perhubungan</h3>
+                    <p>Untuk pesanan atau pertanyaan tentang perkhidmatan pembuatan logo premium, sila hubungi kami melalui WhatsApp.</p>
+                    
+                    <div class="contact-detail">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>010-5112907</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>premium@logoelitespm.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Waktu Operasi</h4>
+                            <p>Setiap Hari: 9:00 pagi - 10:00 malam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="whatsapp-cta">
+                <h3>Ambil Peluang Eksklusif Ini!</h3>
+                <p>Dapatkan logo premium untuk meningkatkan kualiti kerja kursus Perniagaan SPM anda</p>
+                <a href="https://wa.me/60105112907" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-crown"></i> LogoEliteSPM
+            </div>
+            <p>Perkhidmatan Pembuatan Logo Premium untuk Pelajar SPM</p>
+            
+            <ul class="footer-links">
+                <li><a href="#services">Perkhidmatan</a></li>
+                <li><a href="#process">Proses</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimoni</a></li>
+                <li><a href="#contact">Hubungi</a></li>
+            </ul>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 LogoEliteSPM. Hak Cipta Terpelihara.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+            
+            // Scroll to top button visibility
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+        // Scroll to top function
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                navLinks.classList.remove('active');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // WhatsApp button animation
+        const whatsappBtn = document.querySelector('.btn-whatsapp');
+        whatsappBtn.addEventListener('mouseenter', function() {
+            this.style.animation = 'none';
+        });
+        
+        whatsappBtn.addEventListener('mouseleave', function() {
+            this.style.animation = 'pulse 2s infinite';
+        });
+    </script>
+</body>
+</html>
